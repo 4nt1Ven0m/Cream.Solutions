@@ -30,7 +30,7 @@ local library = {
 	tabs = {},
 	draggable = true,
 	flags = {},
-	title = "Amnesty - Universal",
+	title = "Mem-Solutions",
 	open = false,
 	mousestate = inputService.MouseIconEnabled,
 	popup = nil,
@@ -40,8 +40,8 @@ local library = {
 	notifications = {},
 	tabSize = 0,
 	theme = {},
-	foldername = "amnesty/universal",
-	fileext = ".sex"
+	foldername = "Mem-Solutions",
+	fileext = ".MemS"
 }
 
 getgenv().library = library
@@ -2680,8 +2680,4 @@ ConfigSection:AddButton({text = "Delete", callback = function()
         end
     end
 end});
-HelpSection:AddDivider("-=-Owner-=-");
-HelpSection:AddDivider("Kamo_L1");
-HelpSection:AddDivider("-= Helped by =-");
-HelpSection:AddDivider("MainStreamed");
-HelpSection:AddDivider("FunnyGuy");
+
