@@ -2600,18 +2600,15 @@ end});
 
 -- [Background List]
 local backgroundlist = {
-     Rick = "rbxassetid://6403436054",
-      OnePiece = "rbxassetid://4671805159",
-       SUS = "rbxassetid://9180622665",
-        BananCat = "rbxassetid://5009915795",
-         LuffysCristmas = "rbxassetid://11567940809",
-         SovietUnion = "rbxassetid://6909151883",
-         Talimit = "rbxassetid://10309481921",
-    GigaDChad = "rbxassetid://11693388297"
+    Floral = "rbxassetid://5553946656",
+    Flowers = "rbxassetid://6071575925",
+    Circles = "rbxassetid://6071579801",
+    Hearts = "rbxassetid://6073763717",
+    None = "nil"
 };
 
 -- [Background List]
-local back = SettingSection:AddList({text = "Background", max = 4, flag = "background", values = {"Rick", "OnePiece", "SUS", "BananCat", "LuffysCristmas", "GigaDChad", "SovietUnion", "Talimit"}, value = "LuffysCristmas", callback = function(v)
+local back = SettingSection:AddList({text = "Background", max = 5, flag = "background", values = {"Floral", "Flowers", "Circles", "Hearts", "None"}, value = "None", callback = function(v)
     if library.main then
         library.main.Image = backgroundlist[v];
     end
