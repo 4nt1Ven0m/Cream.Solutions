@@ -30,7 +30,7 @@ local library = {
 	tabs = {},
 	draggable = true,
 	flags = {},
-	title = "Mem-Solutions",
+	title = "Amnesty - Universal",
 	open = false,
 	mousestate = inputService.MouseIconEnabled,
 	popup = nil,
@@ -40,8 +40,8 @@ local library = {
 	notifications = {},
 	tabSize = 0,
 	theme = {},
-	foldername = "Mem-Solutions",
-	fileext = ".MemS"
+	foldername = "amnesty/universal",
+	fileext = ".sex"
 }
 
 getgenv().library = library
@@ -2577,22 +2577,19 @@ function library:Init()
 		end)
 	end
 end
----Settings Code
+
 local SettingsTab = library:AddTab("Settings"); 
 local SettingsColumn = SettingsTab:AddColumn(); 
 local SettingsColumn2 = SettingsTab:AddColumn(); 
 local SettingSection = SettingsColumn:AddSection("Menu"); 
 local ConfigSection = SettingsColumn2:AddSection("Configs");
-local HelpSection = SettingsColumn2:AddSection("------------------------");
 local Warning = library:AddWarning({type = "confirm"});
 
-SettingSection:AddBind({text = "Open / Close", flag = "UI Toggle", nomouse = true, key = "End", callback = function()
+SettingSection:AddBind({text = "Open / Close", flag = "UI Toggle", nomouse = true, key = "RightShift", callback = function()
     library:Close();
 end});
-SettingSection:AddButton({text = "Unload", callback = function()
-library:Unload()
-end});
-SettingSection:AddColor({text = "Accent Color", flag = "Menu Accent Color", color = Color3.new(255, 255, 255), callback = function(color)
+
+SettingSection:AddColor({text = "Accent Color", flag = "Menu Accent Color", color = Color3.fromRGB(255, 229, 31), callback = function(color)
     if library.currentTab then
         library.currentTab.button.TextColor3 = color;
     end
@@ -2621,7 +2618,7 @@ local back = SettingSection:AddList({text = "Background", max = 4, flag = "backg
 end});
 
 -- [Background Color Picker]
-back:AddColor({flag = "backgroundcolor", color = Color3.new(255,255,255), callback = function(color)
+back:AddColor({flag = "backgroundcolor", color = Color3.new(), callback = function(color)
     if library.main then
         library.main.ImageColor3 = color;
     end
@@ -2632,12 +2629,17 @@ end, trans = 1, calltrans = function(trans)
 end});
 
 -- [Tile Size Slider]
-SettingSection:AddSlider({text = "Tile Size", min = 0, max = 644, value = 1, callback = function(size)
+SettingSection:AddSlider({text = "Tile Size", min = 50, max = 500, value = 50, callback = function(size)
     if library.main then
-        library.main.TileSize = UDim2.new(1, size, 1, size);
+        library.main.TileSize = UDim2.new(0, size, 0, size);
     end
 end});
 
+-- [Discord Button]
+SettingSection:AddButton({text = "Discord", callback = function()
+end});
+
+-- [Config Box]
 ConfigSection:AddBox({text = "Config Name", skipflag = true});
 
 -- [Config List]
@@ -2680,4 +2682,3 @@ ConfigSection:AddButton({text = "Delete", callback = function()
         end
     end
 end});
-
